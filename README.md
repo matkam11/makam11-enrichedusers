@@ -87,7 +87,7 @@ Keys will appear in /home/USERNAME/.ssh
      - "/usr/bin/yum"
 ```
 
- This will set: USERNAME *comserv*, *tas* = /sbin/reboot, /usr/bin/yum
+ This will set: USERNAME \*DHCP\*, \*sql\* = /sbin/reboot, /usr/bin/yum
 
 # Complete Sample Hiera:
 ```
