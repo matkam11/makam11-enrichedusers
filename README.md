@@ -9,12 +9,12 @@ All the parameters for this module are pulled from Hiera.
 
  users::users: should be a hash
  The keys at this level of the hash should just be usernames. i.e:
- 
+ ```
  users::users:
    mkaminski:
    bbunny:
    jdoe:
-
+```
 ####
   
  The next level of hash should contain at least one of the following:
@@ -25,6 +25,7 @@ All the parameters for this module are pulled from Hiera.
  All three of these keys are optional. 
  You can have any combination of them. i.e.
  
+ ``` 
  mkaminski:
    user:
    ssh:
@@ -34,6 +35,7 @@ All the parameters for this module are pulled from Hiera.
    sudo:
  jdoe:
    ssh:   
+```
 
  Note: Order does not matter.
 
@@ -55,7 +57,7 @@ All the parameters for this module are pulled from Hiera.
    By Default it ensures present and assumes the keyType is "rsa"
   
 Each key name needs to be Unique. i.e:
-
+```
  GOOD: 
 
  ssh:
@@ -67,6 +69,7 @@ Each key name needs to be Unique. i.e:
  ssh:
    key1:
    key1:
+```
 
 Keys will appear in /home/USERNAME/.ssh
  The file containing the key will appear as USERNAME-KEYTYPE-KEYNAME
@@ -74,7 +77,7 @@ Keys will appear in /home/USERNAME/.ssh
 
  Sudo: Can set any number of hosts/allowed.
  It will set the allowed to all hosts. i.e:
-
+```
  sudo:
    hosts :
      - "*DHCP*"
@@ -82,6 +85,7 @@ Keys will appear in /home/USERNAME/.ssh
    allowed  :
      - "/sbin/reboot"
      - "/usr/bin/yum"
+```
 
  This will set: USERNAME *comserv*, *tas* = /sbin/reboot, /usr/bin/yum
 
