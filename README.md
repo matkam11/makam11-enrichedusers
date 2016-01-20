@@ -12,8 +12,8 @@ All the parameters for this module are pulled from Hiera.
  
  users::users:
    mkaminski:
-   kclaxton:
-   lreed:
+   bbunny:
+   jdoe:
 
 ####
   
@@ -29,10 +29,10 @@ All the parameters for this module are pulled from Hiera.
    user:
    ssh:
    sudo:
- kclaxton:
+ bbunny:
    user:
    sudo:
- lreed:
+ jdoe:
    ssh:   
 
  Note: Order does not matter.
@@ -77,8 +77,8 @@ Keys will appear in /home/USERNAME/.ssh
 
  sudo:
    hosts :
-     - "*comserv*"
-     - "*tas*"
+     - "*DHCP*"
+     - "*sql*"
    allowed  :
      - "/sbin/reboot"
      - "/usr/bin/yum"
@@ -86,7 +86,7 @@ Keys will appear in /home/USERNAME/.ssh
  This will set: USERNAME *comserv*, *tas* = /sbin/reboot, /usr/bin/yum
 
 # Complete Sample Hiera:
-
+```
  users::users:
    mkaminski:
       user:
@@ -105,8 +105,9 @@ Keys will appear in /home/USERNAME/.ssh
       sudo:
         priority : "10"
         hosts :
-         - "*comserv*"
-          - "*tas*"
+         - "*DHCP*"
+          - "*sql*"
         allowed  :
           - "/sbin/reboot"
           - "/usr/bin/yum"
+```
