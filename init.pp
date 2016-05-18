@@ -111,6 +111,13 @@
 #        allowed  :
 #          - "/sbin/reboot"
 #          - "/usr/bin/yum"
+#
+#############
+#
+# Author: Matan Kaminski
+# Matan.kaminski@gmail.com
+#
+
 class users() {
   # Can't just pass the var 
   # We want to do a merge between Common, Environment, and Node.
