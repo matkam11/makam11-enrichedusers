@@ -1,4 +1,4 @@
-define users::sudo (
+define enrichedusers::sudo (
   $sudo
 ) {
   $hosts = join($sudo['hosts'], ', ')

@@ -118,10 +118,14 @@
 # Matan.kaminski@gmail.com
 #
 
-class users() {
+class enrichedusers() {
   # Can't just pass the var 
   # We want to do a merge between Common, Environment, and Node.
-  $userArray=hiera_hash(users::users)
-  create_resources( users::parser, $userArray)
+  $userArray=hiera_hash(enrichedusers::users)
+  create_resources( enrichedusers::userparser, $userArray)
+
+  $groupArray=hiera_hash(enrichedusers::groups)
+  create_resources( enrichedusers::groupparser, $groupArray)
+
 }
 

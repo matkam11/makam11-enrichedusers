@@ -1,4 +1,4 @@
-define users::ssh (
+define enrichedusers::ssh (
   $ssh,
 ) {
   file { "/home/${name}/.ssh":
@@ -8,11 +8,11 @@ define users::ssh (
     mode    => '0700',
   }
 
-  $newSSH = prefixHash($ssh, $name)
+  $newSSH = prefix($ssh, $name)
   $defaults = {
     user => $name,
   }
 
-  create_resources(users::ssh::keys, $newSSH, $defaults)
+  create_resources(enrichedusers::ssh::keys, $newSSH, $defaults)
 }
 

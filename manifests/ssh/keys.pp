@@ -1,4 +1,4 @@
-define users::ssh::keys (
+define enrichedusers::ssh::keys (
   $user,
   $key,
   $keyType = 'rsa',

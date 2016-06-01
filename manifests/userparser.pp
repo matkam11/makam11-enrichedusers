@@ -1,4 +1,4 @@
-define users::parser (
+define enrichedusers::parser (
   $user = undef,
   $ssh  = undef,
   $sudo = undef,
@@ -19,13 +19,13 @@ define users::parser (
   }
 
   if $ssh != undef {
-    users::ssh { $name:
+    enrichedusers::ssh { $name:
       ssh => $ssh,
     }
   }
 
   if $sudo != undef {
-    users::sudo { $name:
+    enrichedusers::sudo { $name:
       sudo => $sudo,
     }
   }
